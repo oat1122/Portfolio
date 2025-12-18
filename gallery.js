@@ -8,23 +8,23 @@
       images: [
         {
           src: "./images/account/Screenshot 2025-12-18 100543.png",
-          caption: "หน้า Login Page",
+          caption: "Quotation Dialog",
         },
         {
           src: "./images/account/Screenshot 2025-12-18 100624.png",
-          caption: "หน้า Dashboard หลัก",
+          caption: "Create Quotation Form (1)",
         },
         {
           src: "./images/account/Screenshot 2025-12-18 100636.png",
-          caption: "Sidebar Navigation",
+          caption: "Create Quotation Form (2)",
         },
         {
           src: "./images/account/ดีไซน์ที่ยังไม่ได้ตั้งชื่อ (1).png",
-          caption: "Form เพิ่มสินค้า",
+          caption: "Generated PDF Quotation",
         },
         {
           src: "./images/account/ดีไซน์ที่ยังไม่ได้ตั้งชื่อ (2).png",
-          caption: "Form เพิ่มลูกค้า",
+          caption: "Customer Quotation History",
         },
       ],
     },
@@ -32,23 +32,23 @@
       images: [
         {
           src: "./images/report/Screenshot 2025-12-18 095555.png",
-          caption: "รายงานยอดขายรายเดือน",
+          caption: "Dashboard Overview",
         },
         {
           src: "./images/report/Screenshot 2025-12-18 095641.png",
-          caption: "รายงานลูกค้า",
+          caption: "Complaint Summary Report",
         },
         {
           src: "./images/report/Screenshot 2025-12-18 095654.png",
-          caption: "รายงานสินค้าขายดี",
+          caption: "Complaint Details Report",
         },
         {
           src: "./images/report/Screenshot 2025-12-18 095721.png",
-          caption: "กราฟสรุปยอดขาย",
+          caption: "Complaint Statistics Chart",
         },
         {
           src: "./images/report/ดีไซน์ที่ยังไม่ได้ตั้งชื่อ.png",
-          caption: "Design Mockup",
+          caption: "Login Page",
         },
       ],
     },
