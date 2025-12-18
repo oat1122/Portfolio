@@ -8,23 +8,23 @@
       images: [
         {
           src: "./images/account/Screenshot 2025-12-18 100543.png",
-          caption: "Quotation Dialog",
+          caption: "Quotation Modal Interface",
         },
         {
           src: "./images/account/Screenshot 2025-12-18 100624.png",
-          caption: "Create Quotation Form (1)",
+          caption: "Quotation Entry View",
         },
         {
           src: "./images/account/Screenshot 2025-12-18 100636.png",
-          caption: "Create Quotation Form (2)",
+          caption: "Quotation Data Inputs",
         },
         {
           src: "./images/account/ดีไซน์ที่ยังไม่ได้ตั้งชื่อ (1).png",
-          caption: "Generated PDF Quotation",
+          caption: "PDF Export Preview",
         },
         {
           src: "./images/account/ดีไซน์ที่ยังไม่ได้ตั้งชื่อ (2).png",
-          caption: "Customer Quotation History",
+          caption: "Transaction History Log",
         },
       ],
     },
@@ -32,23 +32,23 @@
       images: [
         {
           src: "./images/report/Screenshot 2025-12-18 095555.png",
-          caption: "Dashboard Overview",
+          caption: "Executive Analytics Dashboard",
         },
         {
           src: "./images/report/Screenshot 2025-12-18 095641.png",
-          caption: "Complaint Summary Report",
+          caption: "Complaint Status Overview",
         },
         {
           src: "./images/report/Screenshot 2025-12-18 095654.png",
-          caption: "Complaint Details Report",
+          caption: "Detailed Incident Report",
         },
         {
           src: "./images/report/Screenshot 2025-12-18 095721.png",
-          caption: "Complaint Statistics Chart",
+          caption: "Complaint Metrics Visualization",
         },
         {
           src: "./images/report/ดีไซน์ที่ยังไม่ได้ตั้งชื่อ.png",
-          caption: "Login Page",
+          caption: "Secure Authentication Portal",
         },
       ],
     },

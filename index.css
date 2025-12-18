@@ -363,6 +363,13 @@ body:not(.user-is-tabbing) a:focus {
 @media (max-width: 500px) {
   .nav {
     justify-content: center;
+    right: 0;
+    padding: var(--gutter-small) 0;
+  }
+
+  .nav__items {
+    justify-content: center;
+    width: 100%;
   }
 }
 
@@ -613,6 +620,19 @@ body:not(.user-is-tabbing) a:focus {
 
 .models-3d-container model-viewer:active {
   cursor: grabbing;
+}
+
+@media (max-width: 900px) {
+  .models-3d-container {
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .models-3d-container model-viewer {
+    pointer-events: none;
+    cursor: default;
+  }
 }
 
 /* --------------------------------------- */
