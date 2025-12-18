@@ -515,6 +515,31 @@ body:not(.user-is-tabbing) a:focus {
   }
 }
 
+/* Work Divider - Separator between projects */
+.work__divider {
+  border: none;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--pink) 20%,
+    var(--pink) 80%,
+    transparent 100%
+  );
+  margin: 6rem 0;
+  opacity: 0.6;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 900px) {
+  .work__divider {
+    margin: 4rem auto;
+    width: 60%;
+  }
+}
+
 /* --------------------------------------- */
 /* ----- Clients ----- */
 /* --------------------------------------- */
@@ -573,6 +598,23 @@ body:not(.user-is-tabbing) a:focus {
   }
 }
 
+/* 3D Models Container */
+.models-3d-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.models-3d-container model-viewer {
+  cursor: grab;
+}
+
+.models-3d-container model-viewer:active {
+  cursor: grabbing;
+}
+
 /* --------------------------------------- */
 /* ----- Contact ----- */
 /* --------------------------------------- */
@@ -619,5 +661,328 @@ body:not(.user-is-tabbing) a:focus {
 @media (max-width: 500px) {
   .footer {
     padding: var(--gutter-medium) 0;
+  }
+}
+
+/* --------------------------------------- */
+/* ----- Image Gallery ----- */
+/* --------------------------------------- */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: var(--gutter-normal);
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  aspect-ratio: 16/10;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 50, 88, 0.3);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-item__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: var(--white);
+  font-size: 1.4rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-item__caption {
+  opacity: 1;
+}
+
+/* --------------------------------------- */
+/* ----- Lightbox Modal ----- */
+/* --------------------------------------- */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox__content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox__image {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox__caption {
+  margin-top: 1.5rem;
+  color: var(--white);
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: -4rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 4rem;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+  line-height: 1;
+}
+
+.lightbox__close:hover {
+  color: var(--pink);
+  transform: scale(1.1);
+}
+
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--white);
+  color: var(--white);
+  font-size: 2.5rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  padding: 0;
+  padding-bottom: 0.3rem;
+}
+
+.lightbox__nav:hover {
+  background: var(--pink);
+  border-color: var(--pink);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox__nav--prev {
+  left: -7rem;
+}
+
+.lightbox__nav--next {
+  right: -7rem;
+}
+
+.lightbox__counter {
+  position: absolute;
+  bottom: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--white-1);
+  font-size: 1.4rem;
+}
+
+@media (max-width: 900px) {
+  .lightbox__nav--prev {
+    left: 1rem;
+  }
+
+  .lightbox__nav--next {
+    right: 1rem;
+  }
+
+  .lightbox__close {
+    top: 1rem;
+    right: 1rem;
+    position: fixed;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+/* --------------------------------------- */
+/* ----- Documentation Dialog ----- */
+/* --------------------------------------- */
+
+.doc-dialog {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+}
+
+.doc-dialog.active {
+  display: block;
+}
+
+.doc-dialog__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+}
+
+.doc-dialog__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border: 1px solid rgba(255, 50, 88, 0.3);
+  border-radius: 16px;
+  padding: 3rem;
+  max-width: 700px;
+  max-height: 80vh;
+  width: 90%;
+  overflow-y: auto;
+  box-shadow: 0 25px 80px rgba(255, 50, 88, 0.2);
+}
+
+.doc-dialog__close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 3rem;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+  line-height: 1;
+}
+
+.doc-dialog__close:hover {
+  color: var(--pink);
+  transform: scale(1.1);
+}
+
+.doc-dialog__body {
+  color: var(--white-1);
+  line-height: 1.8;
+}
+
+.doc-dialog__body h2 {
+  color: var(--white);
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--pink);
+  padding-bottom: 1rem;
+}
+
+.doc-dialog__body h3 {
+  color: var(--pink);
+  font-size: 2rem;
+  margin: 2rem 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.doc-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  stroke: var(--pink);
+  stroke-width: 2;
+}
+
+.doc-dialog__body p {
+  margin: 1rem 0;
+  font-size: 1.6rem;
+}
+
+.doc-dialog__body ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.doc-dialog__body ul li {
+  padding: 0.8rem 0;
+  padding-left: 2rem;
+  position: relative;
+  font-size: 1.5rem;
+}
+
+.doc-dialog__body ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--pink);
+}
+
+.doc-dialog__body strong {
+  color: var(--white);
+}
+
+.doc-dialog__body em {
+  color: var(--white-1);
+  opacity: 0.7;
+  font-size: 1.4rem;
+}
+
+@media (max-width: 600px) {
+  .doc-dialog__content {
+    padding: 2rem;
+    max-height: 90vh;
+  }
+
+  .doc-dialog__body h2 {
+    font-size: 2.2rem;
+  }
+
+  .doc-dialog__body h3 {
+    font-size: 1.8rem;
   }
 }
